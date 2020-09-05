@@ -42,13 +42,30 @@
         border-radius: 4px;
         background: #ffffff;
         list-style-type: none;
-        padding: 1rem;
+        padding: 0;
         display: flex;
         flex-direction: column;
         justify-content: space-around;
 
         li {
             padding: 10px 20px;
+            font-family: "Averta";
+            font-size: 16px;
+            color: rgba(0,0,0,.5);
+            border-bottom: .5px solid #e1e1e1;
+            text-decoration: none;
+            text-transform: uppercase;
+
+            &:hover {
+                cursor: pointer;
+                color: rgba(0,0,0,.5);
+                background-color: #e1e1e1;
+                transition: .5s;
+            }
+
+            a{
+                color: rgba(0,0,0,.5);
+            }
         }
     }
 }

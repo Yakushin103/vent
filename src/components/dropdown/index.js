@@ -36,7 +36,7 @@ const Dropdown = () => {
                         <li>
                             <a href='#'>Add venue</a>
                         </li>
-                        <li>
+                        <li styly={{ borderBottom: 'none' }}>
                             <a href='#'>Log out</a>
                         </li>
                     </ul>

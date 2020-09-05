@@ -19,12 +19,12 @@ const Header = () => {
                 </div>
                 <div className='header-nav-right'>
                     <div>
-                        <a href='#'>
+                        <a href='#' className='header-link'>
                             Referral Programm
                         </a>
                     </div>
                     <div>
-                        <a href='#'>
+                        <a href='#' className='header-link'>
                             Contact Us
                         </a>
                     </div>
