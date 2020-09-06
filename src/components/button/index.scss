@@ -1,0 +1,26 @@
+button {
+    cursor: pointer;
+    font-weight: 400;
+    font-family: "Averta";
+}
+
+button.blue {
+    width: 60%;
+    background: #078089;
+    border: none;
+    border-radius: 50px;
+    line-height: 45px;
+    color: #fff;
+    font-size: 16px;
+}
+
+button.white {
+    width: 160px;
+    padding: 9px 10px;
+    background-color: #fff;
+    border: 1px solid #d7d7d7;
+    border-radius: 50px;
+    line-height: 25px;
+    color: #757373;
+    font-size: 14px;
+}

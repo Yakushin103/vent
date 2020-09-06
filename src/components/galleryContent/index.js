@@ -1,4 +1,6 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+import Button from '../button/index.js'
+import TimeKeepers from '../timeKeeper/index'
 
 import './index.scss'
 
@@ -6,6 +8,21 @@ const dataJson = require("../../mock/data.json")
 
 const GalleryContent = () => {
     const [show, setShow] = useState(false)
+    const [timeStart, setTimeStart] = useState('12:00am')
+    const [timeEnd, setTimeEnd] = useState('12:00pm')
+    const [showTimeStart, setShowTimeStart] = useState(false)
+    const [showTimeEnd, setShowTimeEnd] = useState(false)
+
+    const handleStartTime = () => {
+        setShowTimeStart(!showTimeStart)
+        setShowTimeEnd(false)
+    }
+
+    const handleEndTime = () => {
+        setShowTimeEnd(!showTimeEnd)
+        setShowTimeStart(false)
+    }
+
 
     return (
         <div className='gallery-content'>
@@ -45,18 +62,18 @@ const GalleryContent = () => {
                                         </span>
                                     </div>
                                     <div className='row amenities-items'>
-                                        {
+                                        {/* {
                                             item.amenities.length && item.amenities.map((item, i) => (
                                                 show ?
-                                                    <div key={item.id} className='amenities-item'>
-                                                        {item.name}
-                                                    </div> :
-                                                    i < 3 &&
-                                                    <div key={item.id} className='amenities-item'>
-                                                        {item.name}
-                                                    </div>
+                                                <div key={item.id} className='amenities-item'>
+                                                    {item.name}
+                                                </div> :
+                                                 (i < 3) &&
+                                                <div key={item.id} className='amenities-item'>
+                                                    {item.name}
+                                                </div>
                                             ))
-                                        }
+                                        } */}
                                     </div>
                                 </div>
                                 <div className='about-details-amenities'>
@@ -79,6 +96,18 @@ const GalleryContent = () => {
                                         </p>
                                     </div>
                                 </div>
+                                <div className='about-details-amenities'>
+                                    <span className='title'>Rules</span>
+                                    <div className='row amenities-items'>
+                                        {
+                                            item.rules && item.rules.length && item.rules.map(item => (
+                                                <div key={item.id} className='amenities-item'>
+                                                    {item.name}
+                                                </div>
+                                            ))
+                                        }
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div className='content-item price'>
@@ -89,7 +118,40 @@ const GalleryContent = () => {
                             </div>
                             <div className='price-items'>
                                 <div className='price-item'>Date</div>
-                                <div className='price-item'>Time</div>
+                                <div className='price-item times'>
+                                    <div className='time'>
+                                        <span className='label'>start time</span>
+                                        <div
+                                            onClick={handleStartTime}
+                                            className='time-show'
+                                        >
+                                            <span>{timeStart}</span>
+                                            <span>v</span>
+                                        </div>
+                                        <TimeKeepers
+                                            time={timeStart}
+                                            setTime={setTimeStart}
+                                            showTime={showTimeStart}
+                                            setShowTime={setShowTimeStart}
+                                        />
+                                    </div>
+                                    <div className='time'>
+                                        <span className='label'>end time</span>
+                                        <div
+                                            onClick={handleEndTime}
+                                            className='time-show'
+                                        >
+                                            <span>{timeEnd}</span>
+                                            <span>v</span>
+                                        </div>
+                                        <TimeKeepers
+                                            time={timeEnd}
+                                            setTime={setTimeEnd}
+                                            showTime={showTimeEnd}
+                                            setShowTime={setShowTimeEnd}
+                                        />
+                                    </div>
+                                </div>
                                 <div className='price-item'>
                                     <span className='label'>
                                         People Range
@@ -97,19 +159,28 @@ const GalleryContent = () => {
                                     <select>
                                         {
                                             item.range.length && item.range.map(number => (
-                                                <option key={number.id}> {number.people} </option>
+                                                <option className='select-option' key={number.id}> {number.people} </option>
                                             ))
                                         }
                                     </select>
                                     <textarea placeholder='Your message here'></textarea>
                                 </div>
                                 <div className='price-item button'>
-                                    <button>Request to book</button>
+                                    <Button
+                                        name='Request to book'
+                                        color='blue'
+                                    />
                                     <span>Cancel for free within 24 hours</span>
                                 </div>
                                 <div className='price-item footer'>
-                                        <button>Ask user review</button>
-                                        <button>Ask host review</button>
+                                    <Button
+                                        name='Ask user review'
+                                        color='white'
+                                    />
+                                    <Button
+                                        name='Ask host review'
+                                        color='white'
+                                    />
                                 </div>
                             </div>
                         </div>
