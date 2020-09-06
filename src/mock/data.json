@@ -3,6 +3,14 @@
         "name": "Vasso",
         "id": "1"
     },
+    "homeLinks": {
+        "api": "631.000.3737",
+        "email": "vent@example.com",
+        "addres": "734 Walt Whitman Rd. Suite 203, Melville, NY 11747",
+        "instagram": "#",
+        "youtube": "#",
+        "tiktok": "#"
+    },
     "booking": [
         {
             "name": "Classy Loft Gallery",

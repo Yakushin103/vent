@@ -1,0 +1,31 @@
+.prefooter-links {
+    width: 85%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    .prefooter-links-items {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        .prefooter-links-item {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin-right: 2rem;
+
+            img {
+                width: 1.5rem;
+                margin-right: 1rem;
+            }
+        }
+
+        &.social img {
+            width: 1.5rem;
+            margin-right: 0;
+        }
+    }
+}

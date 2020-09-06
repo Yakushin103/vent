@@ -4,6 +4,7 @@
     background-color: #E9EBEF;
 
     .content-items {
+        max-width: 1200px;
         width: 80%;
         padding: 50px 15% 70px 20%;
         display: flex;
@@ -247,4 +248,13 @@
             }
         }
     }
+}
+
+.prefooter {
+    width: 100%;
+    border-top: 1px solid #d4d3d3;
+    border-bottom: 1px solid #d4d3d3;
+    padding: 1.5rem 0;
+    background-color: #E9EBEF;
+    height: 100px;
 }
