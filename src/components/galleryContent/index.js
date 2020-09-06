@@ -81,7 +81,38 @@ const GalleryContent = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className='content-item price'>2</div>
+                        <div className='content-item price'>
+                            <div className='price-title'>
+                                <span>
+                                    {item.price}
+                                </span>
+                            </div>
+                            <div className='price-items'>
+                                <div className='price-item'>Date</div>
+                                <div className='price-item'>Time</div>
+                                <div className='price-item'>
+                                    <span className='label'>
+                                        People Range
+                                    </span>
+                                    <select>
+                                        {
+                                            item.range.length && item.range.map(number => (
+                                                <option key={number.id}> {number.people} </option>
+                                            ))
+                                        }
+                                    </select>
+                                    <textarea placeholder='Your message here'></textarea>
+                                </div>
+                                <div className='price-item button'>
+                                    <button>Request to book</button>
+                                    <span>Cancel for free within 24 hours</span>
+                                </div>
+                                <div className='price-item footer'>
+                                        <button>Ask user review</button>
+                                        <button>Ask host review</button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 ))
             }
