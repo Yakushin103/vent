@@ -1,8 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
+
+import AppImg from '../../image/appStore.png'
+import GoogleImg from '../../image/android.png'
 
 import './index.scss'
 
+const dataJson = require("../../mock/data.json")
+
 const Footer = () => {
+    const [emailInput, setEmailInput] = useState('')
+
     return (
         <div className='footer'>
             <div className='footer-items'>
@@ -94,6 +101,27 @@ const Footer = () => {
                 </div>
                 <div style={{ width: '25%' }} className='footer-item'>
                     <span className='title'>So what are you waiting for ? Contact for a Quick Quote</span>
+                    <h2>
+                        {dataJson.homeLinks.api}
+                    </h2>
+                    <div className='email-send'>
+                        <input
+                            placeholder='Enter youe email or phone number'
+                            value={emailInput}
+                            onChange={(e) => setEmailInput(e.currentTarget.value)}
+                        />
+                        <button
+                            disabled={emailInput === ''}
+                        >Submit</button>
+                    </div>
+                    <div className='button-group'>
+                        <a style={{ marginRight: '1rem' }} href='#'>
+                            <img src={AppImg} alt='app store' />
+                        </a>
+                        <a href='#'>
+                            <img src={GoogleImg} alt='google play' />
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>

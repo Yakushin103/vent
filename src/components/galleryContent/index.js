@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import Button from '../button/index.js'
 import TimeKeepers from '../timeKeeper/index'
 import FooterLinks from '../footerLinks/index'
+import ModalTime from '../modalTime/index'
 
 import './index.scss'
 
@@ -9,10 +10,28 @@ const dataJson = require("../../mock/data.json")
 
 const GalleryContent = () => {
     const [show, setShow] = useState(false)
-    const [timeStart, setTimeStart] = useState('12:00am')
-    const [timeEnd, setTimeEnd] = useState('12:00pm')
+    const [timeStart, setTimeStart] = useState('12:00 am')
+    const [timeEnd, setTimeEnd] = useState('5:00 pm')
     const [showTimeStart, setShowTimeStart] = useState(false)
     const [showTimeEnd, setShowTimeEnd] = useState(false)
+    const [modalShow, setmodalShow] = useState(false)
+
+    useEffect(() => {
+        let newArr = dataJson.booking[0].freeTime
+        let index = []
+        let findIndex = dataJson.booking[0].freeTime && dataJson.booking[0].freeTime.map((item, i) => {
+            if (item.timeStart === timeStart) {
+                index = [i]
+            }
+            if (item.timeEnd === timeEnd) {
+                index = [...index, i]
+            }
+        })
+
+        let checkArr = newArr.slice(index[0], index[1]).filter(item => !item.free)
+        checkArr.length > 0 ? setmodalShow(true) : setmodalShow(false)
+
+    }, [timeStart, timeEnd])
 
     const handleStartTime = () => {
         setShowTimeStart(!showTimeStart)
@@ -22,6 +41,20 @@ const GalleryContent = () => {
     const handleEndTime = () => {
         setShowTimeEnd(!showTimeEnd)
         setShowTimeStart(false)
+    }
+
+    const handleCancel = () => {
+        setTimeStart('12:00 am')
+        setTimeEnd('5:00 pm')
+        setShowTimeStart(false)
+        setShowTimeEnd(false)
+    }
+
+    const handleSubmit = (chooseArr) => {
+        setTimeStart(chooseArr[0].timeStart)
+        setTimeEnd(chooseArr[chooseArr.length - 1].timeEnd)
+        setShowTimeStart(false)
+        setShowTimeEnd(false)
     }
 
 
@@ -64,6 +97,19 @@ const GalleryContent = () => {
                                             </span>
                                         </div>
                                         <div className='row amenities-items'>
+                                            {
+                                                item.amenities.length && item.amenities.map((item, i) => {
+                                                    if (show) {
+                                                        return <div key={item.id} className='amenities-item'>
+                                                            {item.name}
+                                                        </div>
+                                                    } else if (i < 3) {
+                                                        return <div key={item.id} className='amenities-item'>
+                                                            {item.name}
+                                                        </div>
+                                                    }
+                                                })
+                                            }
                                             {/* {
                                             item.amenities.length && item.amenities.map((item, i) => (
                                                 show ?
@@ -113,6 +159,14 @@ const GalleryContent = () => {
                                 </div>
                             </div>
                             <div className='content-item price'>
+                                {
+                                    modalShow &&
+                                    <ModalTime
+                                        confirm={handleSubmit}
+                                        cancel={handleCancel}
+                                        data={item.freeTime}
+                                    />
+                                }
                                 <div className='price-title'>
                                     <span>
                                         {item.price}

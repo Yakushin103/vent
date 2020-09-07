@@ -16,6 +16,146 @@
             "name": "Classy Loft Gallery",
             "id": "1",
             "location": "New York, 9640 Sierra Hwy",
+            "freeTime": [
+                {
+                    "timeStart": "1:00 am",
+                    "timeEnd": "2:00 am",
+                    "free": false,
+                    "id": "1"
+                },
+                {
+                    "timeStart": "2:00 am",
+                    "timeEnd": "3:00 am",
+                    "free": false,
+                    "id": "2"
+                },
+                {
+                    "timeStart": "3:00 am",
+                    "timeEnd": "4:00 am",
+                    "free": false,
+                    "id": "3"
+                },
+                {
+                    "timeStart": "4:00 am",
+                    "timeEnd": "5:00 am",
+                    "free": true,
+                    "id": "4"
+                },
+                {
+                    "timeStart": "5:00 am",
+                    "timeEnd": "6:00 am",
+                    "free": true,
+                    "id": "5"
+                },
+                {
+                    "timeStart": "6:00 am",
+                    "timeEnd": "7:00 am",
+                    "free": true,
+                    "id": "6"
+                },
+                {
+                    "timeStart": "7:00 am",
+                    "timeEnd": "8:00 am",
+                    "free": true,
+                    "id": "7"
+                },
+                {
+                    "timeStart": "8:00 am",
+                    "timeEnd": "9:00 am",
+                    "free": true,
+                    "id": "8"
+                },
+                {
+                    "timeStart": "9:00 am",
+                    "timeEnd": "10:00 am",
+                    "free": true,
+                    "id": "9"
+                },
+                {
+                    "timeStart": "10:00 am",
+                    "timeEnd": "11:00 am",
+                    "free": true,
+                    "id": "10"
+                },
+                {
+                    "timeStart": "11:00 am",
+                    "timeEnd": "12:00 am",
+                    "free": true,
+                    "id": "11"
+                },
+                {
+                    "timeStart": "12:00 am",
+                    "timeEnd": "1:00 pm",
+                    "free": true,
+                    "id": "12"
+                },
+                {
+                    "timeStart": "1:00 pm",
+                    "timeEnd": "2:00 pm",
+                    "free": true,
+                    "id": "13"
+                },
+                {
+                    "timeStart": "2:00 pm",
+                    "timeEnd": "3:00 pm",
+                    "free": true,
+                    "id": "14"
+                },
+                {
+                    "timeStart": "3:00 pm",
+                    "timeEnd": "4:00 pm",
+                    "free": true,
+                    "id": "15"
+                },
+                {
+                    "timeStart": "4:00 pm",
+                    "timeEnd": "5:00 pm",
+                    "free": true,
+                    "id": "16"
+                },
+                {
+                    "timeStart": "5:00 pm",
+                    "timeEnd": "6:00 pm",
+                    "free": true,
+                    "id": "17"
+                },
+                {
+                    "timeStart": "6:00 pm",
+                    "timeEnd": "7:00 pm",
+                    "free": true,
+                    "id": "18"
+                },
+                {
+                    "timeStart": "7:00 pm",
+                    "timeEnd": "8:00 pm",
+                    "free": true,
+                    "id": "19"
+                },
+                {
+                    "timeStart": "8:00 pm",
+                    "timeEnd": "9:00 pm",
+                    "free": true,
+                    "id": "20"
+                },
+                {
+                    "timeStart": "9:00 pm",
+                    "timeEnd": "10:00 pm",
+                    "free": false,
+                    "id": "21"
+                },
+                {
+                    "timeStart": "10:00 pm",
+                    "timeEnd": "11:00 pm",
+                    "free": false,
+                    "id": "22"
+                },
+                {
+                    "timeStart": "11:00 pm",
+                    "timeEnd": "12:00 pm",
+                    "free": false,
+                    "id": "23"
+                }
+            ],
             "amenities": [
                 {
                     "name": "Essentials",
