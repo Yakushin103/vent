@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import Avater from '../../image/avatar.jpg'
+import UpIcon from '../../image/upIcon.png'
 
 import './index.scss'
 
@@ -10,13 +11,15 @@ const Dropdown = () => {
 
     return (
         <div className='dropdown' onClick={toggle}>
-            <div className='dropdown-avatar'>
+            <div style={{ padding: '0' }} className='dropdown-avatar'>
                 <img src={Avater} />
             </div>
             {
                 dropdownOpen ?
-                <span className='open'>V</span> :
-                <span>V</span>
+                <img className='open' src={UpIcon} alt='up icon' /> :
+                <img src={UpIcon} alt='up icon' />
+                // <span className='open'>V</span> :
+                // <span>V</span>
             }
             {
                 dropdownOpen && (

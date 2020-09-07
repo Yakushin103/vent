@@ -5,11 +5,20 @@
     cursor: pointer;
     position: relative;
 
+    img {
+        width: 20px;
+        height: 20px;
+
+        &.open {
+            transform: rotate(180deg);
+        }
+    }
+
     .dropdown-avatar {
         width: 5rem;
         height: 5rem;
         border-radius: 50%;
-        border: 1px solid #078089;
+        border: 2px solid #03fcd7;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -21,14 +30,6 @@
             border-radius: 50%;
             object-fit: cover;
         }
-    }
-
-    span {
-        font-weight: bold;
-    }
-
-    span.open {
-        transform: rotate(180deg);
     }
 
 

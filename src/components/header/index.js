@@ -28,7 +28,7 @@ const Header = () => {
                             Contact Us
                         </a>
                     </div>
-                    <div>
+                    <div style={{ padding: '0' }}>
                         {
                             !login ?
                                 <div className='login'>

@@ -1,0 +1,20 @@
+.carousel-control-prev {
+    display: none!important;
+}
+
+.carousel-control-next {
+    display: none!important;
+}
+
+.carousel-indicators li {
+    width: 14px!important;
+    height: 14px!important;
+    opacity: .63;
+    background-color: #fff;
+    border-radius: 50%;
+
+    &.active {
+        opacity: 1;
+        background-color: #04d2ff;
+    }
+}
