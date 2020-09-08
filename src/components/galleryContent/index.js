@@ -4,6 +4,7 @@ import TimeKeepers from '../timeKeeper/index'
 import FooterLinks from '../footerLinks/index'
 import ModalTime from '../modalTime/index'
 import Slider from '../slider/index.js'
+import CustomPicker from '../dataRangePicker/index'
 
 import Essentials from '../../image/essential.png'
 import Elevator from '../../image/elevator.png'
@@ -211,7 +212,9 @@ const GalleryContent = () => {
                                     </span>
                                 </div>
                                 <div className='price-items'>
-                                    <div className='price-item'>Date</div>
+                                    <div className='price-item'>
+                                        <CustomPicker />
+                                    </div>
                                     <div className='price-item times'>
                                         <div className='time'>
                                             <span className='label'>start time</span>
@@ -266,7 +269,7 @@ const GalleryContent = () => {
                                         />
                                         <span>Cancel for free within 24 hours</span>
                                     </div>
-                                    <div className='price-item footer'>
+                                    <div style={{ paddingBottom: '0' }} className='price-item footer'>
                                         <Button
                                             name='Ask user review'
                                             color='white'
